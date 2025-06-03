@@ -2,7 +2,10 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-
+//Angel Omar Pardo Monreal
+//Decimo codigo
+//Hacer que se lea un archivo txt
+//14/29/2025
 int main() 
 {
     std::ifstream archivo("Diego.txt");  
