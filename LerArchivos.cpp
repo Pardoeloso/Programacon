@@ -5,14 +5,14 @@
 
 int main() 
 {
-    std::ifstream archivo("Diego.txt");  // Abre el archivo
+    std::ifstream archivo("Diego.txt");  
     std::stringstream buffer;
     std::string contenido;
 
     if (archivo) 
     {
-        buffer << archivo.rdbuf();        // Copia contenido en buffer
-        contenido = buffer.str();         // Convierte a string
+        buffer << archivo.rdbuf();        
+        contenido = buffer.str();         
 
         std::cout << "Este es el contenido del archivo:\n";
         std::cout << contenido << std::endl;
