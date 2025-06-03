@@ -1,25 +1,27 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
-using namespace std;
+int main() 
+{
+    std::ifstream archivo("Diego.txt");  // Abre el archivo
+    std::stringstream buffer;
+    std::string contenido;
 
-int main() {
-    ifstream archivo("Diego.txt"); 
+    if (archivo) 
+    {
+        buffer << archivo.rdbuf();        // Copia contenido en buffer
+        contenido = buffer.str();         // Convierte a string
 
-    if (!archivo.is_open()) {
-        cerr << "No se pudo abrir el archivo 'Diego.txt'" << endl;
-        return 1;
+        std::cout << "Este es el contenido del archivo:\n";
+        std::cout << contenido << std::endl;
+    } 
+    else 
+    {
+        std::cerr << "No se encontró el archivo." << std::endl;
     }
 
-    string linea;
-    cout << "Contenido del archivo 'Diego.txt':\n\n";
-
-    while (getline(archivo, linea)) {
-        cout << linea << endl;
-    }
-
-    archivo.close();
     return 0;
 }
 
